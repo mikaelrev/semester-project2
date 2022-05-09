@@ -1,18 +1,19 @@
 import { baseUrl } from "./settings/api.js";
 
-const heroUrl = baseUrl + "home/1";
+const heroUrl = baseUrl + "home";
 
-(async function() {
+const heroContainer = document.querySelector(".hero-container");
+
+async function getHero() {
     const heroContainer = document.querySelector(".hero-container");
 
-    try {
-        const response = await fetch(heroUrl);
-        const json = await response.json();
+    const response = await fetch(heroUrl);
+    const json = response.json();
+    
+    console.log(json);
+}
 
-        console.log(json);
-    }
-    catch(error) {
-        console.log(error);
-    }
-})();
+getHero();
+    
+
 
