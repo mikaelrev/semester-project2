@@ -2,18 +2,23 @@ import { baseUrl } from "./settings/api.js";
 
 const heroUrl = baseUrl + "home";
 
-const heroContainer = document.querySelector(".hero-container");
-
-async function getHero() {
+(async function() {
     const heroContainer = document.querySelector(".hero-container");
 
-    const response = await fetch(heroUrl);
-    const json = response.json();
-    
-    console.log(json);
-}
+    try {
+        const response = await fetch(heroUrl);
+        const json = await response.json();
 
-getHero();
+        const hero = json.hero_banner;
+        console.log(json);
+    
+        heroContainer.innerHTML = `<img src="${json.hero_banner.formats.large.url}" />`;
+    }
+    catch(error) {
+        console.log(error);
+    }
+})();
+
     
 
 
