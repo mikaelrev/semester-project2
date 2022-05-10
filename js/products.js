@@ -17,9 +17,9 @@ const productsUrl = baseUrl + "products";
                                                 <img src="http://localhost:1337${product.image.url}" class="card-img-top" alt="${product.image.alternativeText}">
                                                 <div class="card-body">
                                                     <h5 class="card-title">${product.title}</h5>
-                                                    <p class="card-text">Description: ${product.description}</p>
-                                                    <p class="card-text">Price: ${product.price}</p>
-                                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                    <p class="card-text">${product.description}</p>
+                                                    <p class="card-text">${product.price}$</p>
+                                                    <a href="#" class="btn btn-primary">Add to Cart</a>
                                                 </div>
                                             </div>`
         })
