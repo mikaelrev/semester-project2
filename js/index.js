@@ -9,10 +9,9 @@ const heroUrl = baseUrl + "home";
         const response = await fetch(heroUrl);
         const json = await response.json();
 
-        const hero = json.hero_banner;
         console.log(json);
     
-        heroContainer.innerHTML = `<img src="${json.hero_banner.formats.large.url}" />`;
+        heroContainer.innerHTML = `<img src="http://localhost:1337${json.hero_banner.url}" />`;
     }
     catch(error) {
         console.log(error);

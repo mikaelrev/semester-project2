@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,eAAe,AAAC,CACZ,KAAK,CAAE,KAAK,CACf",
+    "sources": [
+        "../sass/partials/home.scss"
+    ],
+    "names": [],
+    "file": "home.min.css"
+}
