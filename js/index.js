@@ -18,6 +18,41 @@ const heroUrl = baseUrl + "home";
     }
 })();
 
+
+const featuredUrl = baseUrl + "products";
+
+(async function() {
+    const featuredContainer = document.querySelector(".featured-container");
+
+    try {
+        const response = await fetch(featuredUrl);
+        const product = await response.json();
+
+        featuredContainer.innerHTML = "";
+
+        console.log(product);
+
+        product.forEach(function (product) {
+            if(product.featured === true) {
+                featuredContainer.innerHTML += `<div class="card" style="width: 18rem;">
+                                                    <img src="http://localhost:1337${product.image.url}" class="card-img-top" alt="${product.image.alternativeText}">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">${product.title}</h5>
+                                                        <p class="card-text">Description: ${product.description}</p>
+                                                        <p class="card-text">Price: ${product.price}</p>
+                                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                                    </div>
+                                                </div>`;
+            }
+        })
+
+        
+    }
+    catch(error) {
+        console.log(error);
+    }
+})();
+
     
 
 
