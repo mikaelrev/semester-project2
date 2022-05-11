@@ -1,4 +1,4 @@
-import { baseUrl } from "./settings/api.js";
+import { baseUrl } from "./tools/api.js";
 
 const heroUrl = baseUrl + "home";
 
