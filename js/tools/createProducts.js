@@ -1,14 +1,9 @@
-import { productsUrl } from "../settings/productsUrl.js";
+import displayMessage from "../settings/displayMessage.js";
+import { noResults } from "../settings/noResultsMessage.js";
 
-export async function renderProducts() {
-    const productsContainer = document.querySelector(".products-container");
-
-    try {
-        const response = await fetch(productsUrl);
-        const products = await response.json();
-        console.log(products);
-
-        productsContainer.innerHTML = "";
+export default function createProducts(data, targetElement) {
+    const productsContainer = document.querySelector
+    productsContainer.innerHTML = "";
 
         products.forEach(function(product) {
             productsContainer.innerHTML += `<div class="card" style="width: 18rem;">
@@ -21,8 +16,4 @@ export async function renderProducts() {
                                                 </div>
                                             </div>`
         })
-    }
-    catch(error) {
-        console.log(error);
-    }
-};
+}

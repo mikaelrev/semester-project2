@@ -1,18 +1,20 @@
-import { renderProducts } from "./renderProducts.js";
+import { fetchProducts } from "../products.js";
 
-export default function searchProducts(data, targetElement) {
+export function searchProducts(data, targetElement) {
     const search = document.querySelector(".search");
 
     function filterProducts() {
         const searchValue = event.target.value.trim().toLowerCase();
 
-        const filteredProducts = data.filter(function(article) {
-            if(article.title.toLowerCase().startsWith(searchValue)) {
+        const filteredProducts = data.filter(function(product) {
+            if(product.title.toLowerCase().startsWith(searchValue)) {
                 return true;
             }
         });
 
-        renderProducts(filteredProducts, targetElement);
+        console.log(search);
+
+        fetchProducts(filteredProducts, targetElement);
     }
 
     search.addEventListener("keyup", filterProducts)

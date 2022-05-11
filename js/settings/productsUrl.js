@@ -1,1 +1,0 @@
-export const productsUrl = "http://localhost:1337/products";
