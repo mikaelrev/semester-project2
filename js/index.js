@@ -1,4 +1,5 @@
 import { baseUrl } from "./settings/api.js";
+import { handleClick } from "./tools/handleClick.js";
 
 const heroUrl = baseUrl + "home";
 
@@ -8,8 +9,6 @@ const heroUrl = baseUrl + "home";
     try {
         const response = await fetch(heroUrl);
         const json = await response.json();
-
-        console.log(json);
     
         heroContainer.innerHTML = `<img src="http://localhost:1337${json.hero_banner.url}" />`;
     }
@@ -19,7 +18,7 @@ const heroUrl = baseUrl + "home";
 })();
 
 
-const featuredUrl = baseUrl + "products";
+const featuredUrl = baseUrl + "products/";
 
 (async function() {
     const featuredContainer = document.querySelector(".featured-container");
@@ -30,8 +29,6 @@ const featuredUrl = baseUrl + "products";
 
         featuredContainer.innerHTML = "";
 
-        console.log(product);
-
         product.forEach(function (product) {
             if(product.featured === true) {
                 featuredContainer.innerHTML += `<div class="card" style="width: 18rem;">
@@ -40,18 +37,27 @@ const featuredUrl = baseUrl + "products";
                                                         <h5 class="card-title">${product.title}</h5>
                                                         <p class="card-text">${product.description}</p>
                                                         <p class="card-text">${product.price}$</p>
-                                                        <a href="#" class="btn btn-primary">View Product</a>
+                                                        <a href="product-details.html?id=${product.id}" class="btn btn-primary">View Product</a>
+                                                        <i class="fa-solid fa-cart-plus fa-2xl" data-id="${product.id}" data-title="${product.title}"></i>
                                                     </div>
                                                 </div>`;
             }
-        })
+            const addToCart = document.querySelectorAll("i");
 
-        
+            addToCart.forEach((button) => {
+                button.addEventListener("click", handleClick);
+            });
+        })    
     }
     catch(error) {
         console.log(error);
     }
 })();
+
+
+
+
+
 
     
 

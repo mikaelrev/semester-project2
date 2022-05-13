@@ -18,3 +18,6 @@ async function getProducts() {
 
 getProducts();
 
+
+
+
