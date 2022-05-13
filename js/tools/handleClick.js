@@ -1,5 +1,4 @@
 import { getCartProducts } from "./getCartProducts.js";
-import { addToCart } from "./addToCart.js";
 
 export function handleClick() {
     this.classList.toggle("fa-cart-plus");
@@ -7,6 +6,8 @@ export function handleClick() {
 
     const id = this.dataset.id;
     const title = this.dataset.title;
+    const image = this.dataset.image;
+    const price = this.dataset.price;
 
     const productsInCart = getCartProducts();
 
@@ -15,7 +16,11 @@ export function handleClick() {
     });
 
     if(!productExists) {
-        const product = { id: id, title: title};
+        const product = { 
+            id: id, 
+            title: title,
+            image: image,
+            price: price};
         
         productsInCart.push(product);
         
@@ -24,6 +29,9 @@ export function handleClick() {
     else {
         const newCart = productsInCart.filter((product) => product.id !== id);
         addToCart(newCart);
-    }
-    
+    }    
+}
+
+function addToCart(productsToAdd) {
+    localStorage.setItem("products", JSON.stringify(productsToAdd));
 }

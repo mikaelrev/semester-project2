@@ -1,5 +1,8 @@
 import { baseUrl } from "./settings/api.js";
 import { handleClick } from "./tools/handleClick.js";
+import { getCartProducts } from "./tools/getCartProducts.js";
+
+const cart = getCartProducts();
 
 const heroUrl = baseUrl + "home";
 
@@ -31,6 +34,17 @@ const featuredUrl = baseUrl + "products/";
 
         product.forEach(function (product) {
             if(product.featured === true) {
+
+                let cssClass = "fa-cart-plus";
+
+                const isProductInCart = cart.find(function(productToCheck) {
+                    return parseInt(productToCheck.id) === product.id;
+                });
+
+                if(isProductInCart) {
+                    cssClass = "fa-cart-shopping";
+                }
+
                 featuredContainer.innerHTML += `<div class="card" style="width: 18rem;">
                                                     <img src="http://localhost:1337${product.image.url}" class="card-img-top" alt="${product.image.alternativeText}">
                                                     <div class="card-body">
@@ -38,7 +52,7 @@ const featuredUrl = baseUrl + "products/";
                                                         <p class="card-text">${product.description}</p>
                                                         <p class="card-text">${product.price}$</p>
                                                         <a href="product-details.html?id=${product.id}" class="btn btn-primary">View Product</a>
-                                                        <i class="fa-solid fa-cart-plus fa-2xl" data-id="${product.id}" data-title="${product.title}"></i>
+                                                        <i class="fa-solid ${cssClass} fa-2xl" data-id="${product.id}" data-title="${product.title}" data-price="${product.price}" data-image="http://localhost:1337${product.image.url}"></i>
                                                     </div>
                                                 </div>`;
             }
