@@ -16,14 +16,12 @@ const productUrl = productsUrl + id;
 
     const detailsContainer = document.querySelector(".details-container");
 
-    detailsContainer.innerHTML = `<div class="card" style="width: 18rem;">
+    detailsContainer.innerHTML = `<div class="container-lg">
                                     <img src="http://localhost:1337${details.image.url}" class="card-img-top" alt="${details.image.alternativeText}">
-                                    <div class="card-body">
-                                        <h5 class="card-title">${details.title}</h5>
-                                        <p class="card-text">${details.description}</p>
-                                        <p class="card-text">${details.price}$</p>
-                                        <a href="#" class="btn btn-primary">Add to Cart</a>
-                                    </div>
+                                    <h5 class="card-title">${details.title}</h5>
+                                    <p class="card-text">${details.description}</p>
+                                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                                    <p class="card-text">${details.price}$</p>
                                 </div>`
 
     console.log(details);

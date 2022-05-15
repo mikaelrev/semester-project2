@@ -4,6 +4,7 @@ const cartProducts = getCartProducts();
 
 const cartContainer = document.querySelector(".cart-container");
 
+
 if(cartProducts.length === 0) {
     cartContainer.innerHTML = "No items in cart";
 }
@@ -19,3 +20,4 @@ cartProducts.forEach((product) => {
                                     </div>
                                 </div>`
 });
+
