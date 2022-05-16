@@ -1,11 +1,14 @@
 import { baseUrl } from "./settings/api.js";
 import displayMessage from "./tools/displayMessage.js";
+import { saveToken, saveUser } from "./tools/storage.js";
 
 const form =  document.querySelector("form");
 const message = document.querySelector(".message-container");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 
+
+form.addEventListener("submit", submitForm);
 
 function submitForm() {
     event.preventDefault();
@@ -16,13 +19,11 @@ function submitForm() {
     const passwordValue = password.value.trim();
 
     if(emailValue.length === 0 || passwordValue.length === 0) {
-        displayMessage("warning", "Invalid values", ".message-container");
+        return displayMessage("warning", "Invalid values", ".message-container");
     }
 
     doLogin(emailValue, passwordValue);
 }
-
-form.addEventListener("submit", submitForm);
 
 async function doLogin(email, password) {
     const url = baseUrl + "auth/local";
@@ -33,21 +34,23 @@ async function doLogin(email, password) {
         method: "POST",
         body: data,
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
         },
     };
 
     try {
         const response = await fetch(url, options);
-        const json = response.json();
+        const json = await response.json();
 
         if(json.user) {
-            displayMessage("Success", "Successfully logged in", ".message-container");
+            saveToken(json.jwt);
+            saveUser(json.user);
+
+            location.href = "admin.html";
         }
         if(json.error) {
-            displayMessage("warning", "Invalid login details", ".message-container");
+            displayMessage("warning", "Email or password incorrect", ".message-container");
         }
-        console.log(json);
     }
     catch(error) {
         console.log(error)

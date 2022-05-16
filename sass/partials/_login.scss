@@ -4,14 +4,18 @@
 }
 
 .message-container {
-    width: 300px;
+    width:fit-content;
     color: white;
+}
+
+.warning, .success {
+    padding: 1em;
 }
 
 .warning {
     background-color: orange;
 }
 
-.sucess {
+.success {
     background-color: forestgreen;
 }

@@ -21,15 +21,21 @@ img {
 }
 
 .message-container {
-  width: 300px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   color: white;
+}
+
+.warning, .success {
+  padding: 1em;
 }
 
 .warning {
   background-color: orange;
 }
 
-.sucess {
+.success {
   background-color: forestgreen;
 }
 
