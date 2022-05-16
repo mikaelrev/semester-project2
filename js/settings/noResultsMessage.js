@@ -1,1 +1,0 @@
-export const noResults = "Could not find product";

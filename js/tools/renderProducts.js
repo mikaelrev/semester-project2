@@ -3,7 +3,7 @@ export function renderProducts(productsToRender) {
     productsContainer.innerHTML = "";
 
     productsToRender.forEach(function(product) {
-        productsContainer.innerHTML += `<div class="card img-fluid" style="width: 18rem;">
+        productsContainer.innerHTML += `<div class="card" style="width: 18rem;">
                                             <img src="http://localhost:1337${product.image.url}" class="card-img-top" alt="${product.image.alternativeText}">
                                             <div class="card-body">
                                                 <h5 class="card-title">${product.title}</h5>
