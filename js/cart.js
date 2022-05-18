@@ -1,4 +1,7 @@
 import { getCartProducts } from "./tools/getCartProducts.js";
+import createMenu from "./tools/createMenu.js";
+
+createMenu();
 
 const cartProducts = getCartProducts();
 

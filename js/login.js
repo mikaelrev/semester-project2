@@ -1,12 +1,14 @@
 import { baseUrl } from "./settings/api.js";
 import displayMessage from "./tools/displayMessage.js";
 import { saveToken, saveUser } from "./tools/storage.js";
+import createMenu from "./tools/createMenu.js";
 
 const form =  document.querySelector("form");
 const message = document.querySelector(".message-container");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 
+createMenu();
 
 form.addEventListener("submit", submitForm);
 

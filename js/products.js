@@ -1,9 +1,13 @@
+import { baseUrl } from "./settings/api.js";
 import { renderProducts } from "./tools/renderProducts.js";
 import { searchProducts } from "./tools/searchProducts.js";
-import { productsUrl } from "./settings/api.js";
+import createMenu from "./tools/createMenu.js";
 
+createMenu();
 
-async function getProducts() {
+const productsUrl = baseUrl + "products/";
+
+(async function() {
     try {
         const response = await fetch(productsUrl);
         const products = await response.json();
@@ -14,9 +18,8 @@ async function getProducts() {
     catch(error) {
         console.log(error);
     }
-}
+})();
 
-getProducts();
 
 
 

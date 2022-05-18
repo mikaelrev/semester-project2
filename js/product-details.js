@@ -1,4 +1,7 @@
-import { productsUrl } from "./settings/api.js";
+import { baseUrl } from "./settings/api.js";
+import createMenu from "./tools/createMenu.js";
+
+createMenu();
 
 const queryString = document.location.search;
 
@@ -6,7 +9,7 @@ const params = new URLSearchParams(queryString);
 
 const id = params.get("id");
 
-const productUrl = productsUrl + id;
+const productUrl = baseUrl + "products/" + id;
 
 (async function() {
     const response = await fetch(productUrl);
