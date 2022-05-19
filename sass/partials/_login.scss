@@ -8,7 +8,7 @@
     color: white;
 }
 
-.warning, .success, .error {
+.warning, .success {
     padding: 1em;
 }
 
@@ -18,8 +18,4 @@
 
 .success {
     background-color: forestgreen;
-}
-
-.error {
-    background-color: red;
 }
