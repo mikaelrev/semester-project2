@@ -5,7 +5,7 @@ export default function createMenu() {
     const username = getUsername();
 
     let authLink = `<a href="login.html" class="nav-link">Login</a>`;
-    const adminLink = `<a href="admin.html" class="nav-link">Admin Page</a>`;
+    const adminLink = `<a href="admin.html" class="nav-link">Add Product</a>`;
 
     if(username) {
         authLink = `<span>Hi ${username}</span>
