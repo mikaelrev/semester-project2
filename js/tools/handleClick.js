@@ -19,7 +19,7 @@ export function handleClick() {
         const product = { 
             id: id, 
             title: title,
-            image_url: image,
+            image: image,
             price: price};
         
         productsInCart.push(product);
