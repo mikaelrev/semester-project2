@@ -22,7 +22,6 @@ cartProducts.forEach((product) => {
                                         <p class="card-text">${product.price}$</p>
                                         <a href="product-details.html?id=${product.id}" class="btn btn-primary mb-2">View Product</a>
                                         <button class="btn btn-secondary">Remove from cart</button>
-
                                     </div>
                                 </div>`
 });

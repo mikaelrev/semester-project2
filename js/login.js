@@ -48,7 +48,7 @@ async function doLogin(email, password) {
             saveToken(json.jwt);
             saveUser(json.user);
 
-            location.href = "admin.html";
+            location.href = "/";
         }
         if(json.error) {
             displayMessage("warning", "Email or password incorrect", ".message-container");

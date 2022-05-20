@@ -4,6 +4,12 @@ import displayMessage from "./tools/displayMessage.js";
 import deleteButton from "./ui/deleteButton.js";
 import { getToken } from "./tools/storage.js";
 
+const token = getToken();
+
+if(!token) {
+    location.href = "/";
+}
+
 createMenu();
 
 const queryString = document.location.search;
@@ -63,8 +69,6 @@ async function updateProduct(title, description, price, id) {
     const url = baseUrl + "products/" + id;
 
     const data = JSON.stringify( { title: title, description: description, price: price });
-
-    const token = getToken();
 
     const options = {
         method: "PUT",

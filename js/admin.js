@@ -3,6 +3,12 @@ import { baseUrl } from "./settings/api.js";
 import displayMessage from "./tools/displayMessage.js";
 import createMenu from "./tools/createMenu.js";
 
+const token = getToken();
+
+if(!token) {
+    location.href = "/";
+}
+
 createMenu();
 
 const form = document.querySelector("form");
@@ -36,8 +42,6 @@ async function addProduct(title, description, price, image) {
     const url = baseUrl + "products";
     
     const data = JSON.stringify( { title: title, description: description, price: price, image_url: image });
-
-    const token = getToken();
 
     const options = {
         method: "POST",
