@@ -38,15 +38,13 @@ export async function renderFeatured() {
                     cssClass = "fa-cart-shopping";
                 }
 
-                featuredContainer.innerHTML += `<div class="card" style="width: 18rem;">
-                                                    <img src="http://localhost:1337${product.image.url}" class="card-img-top" alt="${product.image.alternativeText}">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title">${product.title}</h5>
-                                                        <p class="card-text">${product.price}$</p>
-                                                        ${pathname}
-                                                        <i class="fa-solid ${cssClass} fa-2xl" data-id="${product.id}" data-title="${product.title}" data-price="${product.price}" data-image="http://localhost:1337${product.image.url}"></i>
-                                                    </div>
-                                                </div>`;
+                featuredContainer.innerHTML += `<div class="col-md-6 col-lg-4 col-xl-3 p-2 mb-5">
+                <img src="http://localhost:1337${product.image.url}" class="w-100">
+                <h5 class="my-3">${product.title}</h5>
+                <p>${product.price}$</p>
+                ${pathname}
+                <i class="fa-solid ${cssClass} fa-2xl" data-id="${product.id}" data-title="${product.title}" data-price="${product.price}" data-image="http://localhost:1337${product.image.url}"></i>
+            </div>`;
             }
             const addToCart = document.querySelectorAll("i");
 
