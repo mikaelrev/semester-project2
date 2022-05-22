@@ -24,7 +24,7 @@ export async function renderFeatured() {
 
                 let cssClass = "fa-cart-plus";
 
-                let pathname = `<a href="product-details.html?id=${product.id}" class="btn btn-primary">View Product</a>`;
+                let pathname = `<a href="product-details.html?id=${product.id}" class="btn btn-success">View Product</a>`;
 
                 if(username) {
                     pathname += `<a href="edit.html?id=${product.id}" class="btn btn-secondary">Edit Product</a>`;
