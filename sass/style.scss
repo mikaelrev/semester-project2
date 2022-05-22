@@ -1,8 +1,4 @@
-@import "partials/general";
 @import "partials/custom";
-@import "partials/home.scss";
-@import "partials/login";
-@import "partials/layout";
 
 
 
@@ -51,3 +47,10 @@
 // Utilities
 @import "../bootstrap-scss/utilities/api";
 // scss-docs-end import-stack
+
+@import "partials/general";
+@import "partials/nav";
+
+@import "partials/home.scss";
+@import "partials/login";
+@import "partials/layout";
