@@ -1,11 +1,13 @@
-html, body {
-    height: 100%;
-}
-
 body {
     background-color: $background-color;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 footer {
     background-color: $dark;
+    color: $navbar-dark-color;
+    padding: 3em;
+    margin-top: auto;
 }

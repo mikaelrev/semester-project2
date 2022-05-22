@@ -39,13 +39,7 @@ const featured = document.getElementById("featured");
         description.value = details.description;
         price.value = details.price;
         idInput.value = details.id;
-        featured.value = details.featured;
-
-        if(featured.value === true ) {
-            featured.checked = true;
-        } else {
-            featured.checked = false;
-        }
+        featured.checked = details.featured;
 
         console.log(featured);
 
@@ -67,10 +61,14 @@ function submitForm(event) {
     const descriptionValue = description.value.trim();
     const priceValue = parseFloat(price.value);
     const idValue = idInput.value;
-    const featuredValue = featured.value;
+    const featuredValue = featured.checked;
 
     if(titleValue.length === 0 || descriptionValue.length === 0 || isNaN(priceValue) || priceValue.lenth === 0) {
         return displayMessage("warning", "Please supply proper values", ".message-container");
+    }
+
+    if(featuredValue === true) {
+        featuredValue === true;
     }
 
     updateProduct(titleValue, descriptionValue, priceValue, idValue, featuredValue);
