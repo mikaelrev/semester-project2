@@ -19,7 +19,7 @@ export function renderProducts(productsToRender) {
         let pathname = `<a href="product-details.html?id=${product.id}" class="btn btn-primary">View Product</a>`;
 
         if(username) {
-            pathname = `<a href="edit.html?id=${product.id}" class="btn btn-primary">Edit Product</a>`;
+            pathname += `<a href="edit.html?id=${product.id}" class="btn btn-secondary">Edit Product</a>`;
         }
 
         const isProductInCart = cart.find(function(productToCheck) {
@@ -30,13 +30,19 @@ export function renderProducts(productsToRender) {
             cssClass = "fa-cart-shopping";
         }   
 
-        productsContainer.innerHTML += `<div class="col-md-6 col-lg-4 col-xl-3 p-2 mb-5">
-                                            <img src="http://localhost:1337${product.image.url}" class="w-100">
-                                            <h5 class="my-3">${product.title}</h5>
-                                            <p>${product.price}$</p>
-                                            ${pathname}
-                                            <i class="fa-solid ${cssClass} fa-2xl" data-id="${product.id}" data-title="${product.title}" data-price="${product.price}" data-image="http://localhost:1337${product.image.url}"></i>
-                                        </div>`
+        productsContainer.innerHTML += `<div class="col-lg-3 col-md-6 mb-4">
+        <div class="card">
+        <img src="http://localhost:1337${product.image.url}" class="card-img-top" alt="${product.title}">
+        <div class="card-body">
+            <h5 class="card-title">${product.title}</h5>
+            <p class="card-text">${product.price}$</p>
+            <div class="btn-group">
+                ${pathname}
+            </div>
+            <i class="fa-solid ${cssClass} fa-2xl mt-4" data-id="${product.id}" data-title="${product.title}" data-price="${product.price}" data-image="http://localhost:1337${product.image.url}"></i>
+        </div>
+    </div>
+</div>`
     });
 
     const addToCart = document.querySelectorAll("i");
