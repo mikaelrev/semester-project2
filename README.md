@@ -36,3 +36,9 @@ npm run develop
 ```
 
 The admin panel will open at `http://localhost:1337/admin`.
+
+User credentials for login
+
+- email: admin@admin.com
+- username: admin
+- password: Pass1234
