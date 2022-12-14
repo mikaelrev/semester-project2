@@ -2,8 +2,6 @@
 
 ![image](https://github.com/mikaelrev/semester-project2/blob/main/semester-project-2.png?raw=true)
 
-A simple overview of the use/purpose of the project.
-
 ## Description
 
 Climbgear is an ecommerce website where people can buy climbing gear. If you log in as admin, you can add products and delete them. The project is using a local strapi API.
