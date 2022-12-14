@@ -16,9 +16,7 @@ Climbgear is an ecommerce website where people can buy climbing gear. If you log
 
 ### Installing
 
-1. Clone the repo:
-
-(https://github.com/mikaelrev/semester-project2.git)
+1. Clone the repo
 
 2. Install the dependencies:
 
