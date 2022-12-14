@@ -26,7 +26,7 @@ npm install bootstrap@5.2.3
 
 ### Running
 
-To be able to use this website, you will need to install and run this strapi project: (https://github.com/NoroffFEU/strapi-sp2).
+To be able to use this website, you will need to install and run this strapi project: https://github.com/NoroffFEU/strapi-sp2
 
 To run the project:
 
