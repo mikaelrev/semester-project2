@@ -18,11 +18,7 @@ Climbgear is an ecommerce website where people can buy climbing gear. If you log
 
 1. Clone the repo
 
-2. Install the dependencies:
-
-```
-npm install bootstrap@5.2.3
-```
+2. Install strapi project below
 
 ### Running
 
